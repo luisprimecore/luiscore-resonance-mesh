@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://luiscore.com/schemas/resonance-query.json",
+  "title": "LuisCore Resonance Query Response",
+  "description": "Experimental devnet resonance mesh response from GET/POST /api/resonance-query.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "generated_at",
+    "experimental",
+    "site",
+    "query",
+    "matched_concepts",
+    "related_agents",
+    "note"
+  ],
+  "properties": {
+    "version": { "const": "1" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "experimental": { "const": true },
+    "site": { "const": "luiscore.com" },
+    "query": { "type": "string" },
+    "matched_concepts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["slug", "label", "path", "score"],
+        "properties": {
+          "slug": { "type": "string" },
+          "label": { "type": "string" },
+          "path": { "type": "string" },
+          "score": { "type": "number" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "related_agents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["agent_id", "name", "role", "relevance"],
+        "properties": {
+          "agent_id": { "type": ["string", "null"] },
+          "name": { "type": "string" },
+          "role": { "type": "string" },
+          "relevance": { "type": "number" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "note": { "type": "string" }
+  }
+}
