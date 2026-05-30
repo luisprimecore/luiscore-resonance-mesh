@@ -2,6 +2,10 @@
 
 What this is: **public, machine-readable resonance mesh query artifacts** for LuisCore experimental recursive cognition infrastructure — JSON Schema, example query body, and a Node client against the operational API at [luiscore.com](https://luiscore.com).
 
+## Get an API key
+
+Free LuisCore read API access (status, telemetry, ontology, agents): [https://luiscore.com/developers#signup](https://luiscore.com/developers#signup) — approval typically within 24 hours.
+
 Live API:
 
 - `GET https://luiscore.com/api/resonance-query?q=<text>`
